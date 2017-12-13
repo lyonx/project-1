@@ -17,6 +17,14 @@ $(document).ready(function () {
 
             // Loop through and provide the one article from each source
             for (var i = 0; i < articles.length; i += 10) {
+               
+                 //get data from response
+                 var title = response.articles[i].title;
+                 var url = response.articles[i].url;
+                 var source = response.articles[i].source.name;
+               
+               
+               
                 var articleDiv = $("<div>");
                 articleDiv.addClass('article');
                 var ptag = $("<p>");
@@ -27,10 +35,7 @@ $(document).ready(function () {
                 var pSource = $("<p>");
                 pSource.addClass("news-source");
 
-                //get data from response
-                var title = response.articles[i].title;
-                var url = response.articles[i].url;
-                var source = response.articles[i].source.name;
+               
                 
                 // append data from response to appropriate elements created
                 atag.text(title);
